@@ -26,7 +26,7 @@ noun.getWord();
 */
 
 
-let words = ["axolotl", "blobfish", "warthog", "condor", "aardvark", "echidna", "aye-aye", "shoebill", "gerenuk", "seal"]
+let words = ["axolotl", "blobfish", "warthog", "condor", "aardvark", "echidna", "aye-aye", "shoebill", "gerenuk", "seal", "claymore", "matilda", "mortar"]
 let answer = words[Math.floor(Math.random() * words.length)];
 let maxWrong = 6;
 let mistakes = 0;
@@ -104,9 +104,9 @@ function handleGuess(chosenLetter){
 function updatePicture(){
 	
 	if (mistakes < 6){
-	document.getElementById('hangmanPic').src = 'images/' + mistakes + '.jpg';
+	document.getElementById('hangemPic').src = 'images/' + mistakes + '.jpg';
 	} else {
-	document.getElementById('hangmanPic').src = 'images/' + answer + '.jpg';
+	document.getElementById('hangemPic').src = 'images/' + answer + '.jpg';
 }
 }
 
@@ -114,7 +114,7 @@ function checkIfGameWon(){
 	
 	if (wordStatus === answer){
 		document.getElementById('keyboard').innerHTML = "<h2>You Won</h2>";
-		document.getElementById('hangmanPic').src = 'images/' + answer + '.jpg'
+		document.getElementById('hangemPic').src = 'images/' + answer + '.jpg'
 	}
 }
 
@@ -123,7 +123,7 @@ function checkIfGameLost(){
 	if (mistakes === maxWrong){
 		document.getElementById('wordSpotlight').innerHTML = answer;
 		document.getElementById('keyboard').innerHTML = "<h2>You Lost</h2>";
-		//document.getElementById('hangmanPic').src = 'images/' + answer + '.jpg'
+		//document.getElementById('hangemPic').src = 'images/' + answer + '.jpg'
 		
 	}
 }
@@ -143,7 +143,7 @@ function reset(){
 	answer = words[Math.floor(Math.random() * words.length)];
 	mistakes = 0;
 	guessed = [];
-	document.getElementById('hangmanPic').src = 'images/hangman.jpg';
+	document.getElementById('hangemPic').src = 'images/hangem.jpg';
 	randomWord();
 	generateButtons();
 	guessedWord();
